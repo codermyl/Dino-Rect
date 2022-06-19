@@ -117,19 +117,16 @@ function accelerate(n) {
 }
 
 window.addEventListener('keydown', (e) => {
-    if(e.keyCode == 32)
-        accelerate(-0.5);
+    if(e.keyCode == 32 && myGamePiece.y == 250)
+        accelerate(-2);
 })
 
 window.addEventListener('keyup', (e) => {
     if(e.keyCode == 32)
-        accelerate(0.2);
+        accelerate(0.3);
 })
 
-window.addEventListener('keydown', (e) => {
-    if(e.keyCode == 13)
-        startGame();
-})
+
 
 
 
