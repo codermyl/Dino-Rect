@@ -58,9 +58,7 @@ function component(width, height, color, x, y, type) {
             this.y = rockbottom;
             this.gravitySpeed = 0;
         }
-        else if(this.y < 0){
-            this.gravitySpeed = 0;
-        }
+        
     }
     this.crashWith = function(otherobj) {
         var myleft = this.x;
@@ -81,7 +79,9 @@ function component(width, height, color, x, y, type) {
 
 function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-    
+    if(myGamePiece.y < 0){
+        return;
+    }
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
             return;
